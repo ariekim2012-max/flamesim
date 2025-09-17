@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>트위터 염상 시뮬레이터</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- 좌측 사이드바 -->
+    <aside class="sidebar">
+      <div class="brand">FlameSim 🔥</div>
+      <nav>
+        <button class="nav-btn">홈</button>
+        <button class="nav-btn">탐색</button>
+        <button class="nav-btn">알림 <span id="notifBadge" class="badge">0</span></button>
+        <button class="nav-btn">메시지</button>
+      </nav>
+    </aside>
+
+    <!-- 중앙 메인 -->
+    <main class="main">
+      <div class="composer">
+        <textarea id="tweetInput" placeholder="지금 뭐 하고 있어? (예: 안녕하세요)"></textarea>
+        <div class="controls">
+          <div class="left-controls">
+            <label>발생강도 
+              <input id="intensity" type="range" min="1" max="10" value="6" />
+            </label>
+          </div>
+          <div class="right-controls">
+            <button id="postBtn" class="btn primary">포스트</button>
+            <button id="clearBtn" class="btn">초기화</button>
+          </div>
+        </div>
+      </div>
+
+      <section id="timeline" class="timeline">
+        <!-- 타임라인(원글 + 반응) 들어감 -->
+      </section>
+    </main>
+
+    <!-- 우측 사이드바 -->
+    <aside class="rightbar">
+      <div class="card">
+        <h4>시뮬레이션</h4>
+        <label class="switch">
+          <input id="simToggle" type="checkbox" checked />
+          <span class="slider"></span>
+        </label>
+        <p class="muted">포스트하면 자동으로 반응이 생성됩니다.</p>
+      </div>
+
+      <div class="card trends">
+        <h4>트렌드</h4>
+        <ul id="trendsList"></ul>
+      </div>
+    </aside>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
